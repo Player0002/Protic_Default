@@ -1,0 +1,88 @@
+﻿<Window x:Class="TeamProgramWithDatabase.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeamProgramWithDatabase"
+        mc:Ignorable="d"
+        Title="Register" Height="720" Width="1280" Background="#FFF7F7F7" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="회원가입" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="D2Coding" FontSize="48" Foreground="CadetBlue"/>
+        <Border BorderBrush="CadetBlue" BorderThickness="1" HorizontalAlignment="Left" Height="628" Margin="639,83,0,-20" VerticalAlignment="Top" Width="2"/>
+        <Border BorderBrush="CadetBlue" BorderThickness="1" HorizontalAlignment="Left" Height="2" Margin="10,74,0,0" VerticalAlignment="Top" Width="1254"/>
+        <Canvas HorizontalAlignment="Left" Height="556" Margin="30,103,0,0" VerticalAlignment="Top" Width="579">
+            <Label Content="사용자명" Canvas.Left="10" Canvas.Top="10" RenderTransformOrigin="0,0" FontFamily="D2Coding" FontSize="20"/>
+            <Label x:Name="UserNameWarrings"  Content="사용자명의 길이는 20자리를 초과할 수 없으며 특수문자와 공백이 불가능합니다." Canvas.Left="100" Canvas.Top="17" FontFamily="D2Coding" Foreground="Gray" />
+            <TextBox x:Name="userNameBox" Height="30" Canvas.Left="19" MaxLength="20" Canvas.Top="48" Width="367" VerticalContentAlignment="Center" FontFamily="D2Coding" FontSize="16" TextChanged="UserNameBox_TextChanged"/>
+            <Label x:Name="CanUseUsername" Content="" Canvas.Left="386" Canvas.Top="48" Height="30" Width="193"/>
+
+            <Label Content="이메일" Canvas.Left="10" Canvas.Top="120" RenderTransformOrigin="0,0" FontFamily="D2Coding" FontSize="20"/>
+            <Label x:Name="EmailWarrings"  Content="이메일의 길이는 30자리를 초과할 수 없으며 숫자와 영어만 입력이 가능합니다." Canvas.Left="100" Canvas.Top="127" FontFamily="D2Coding" Foreground="Gray" />
+            <TextBox x:Name="EmailBox" Height="30" Canvas.Left="19" MaxLength="30" Canvas.Top="158" Width="200" VerticalContentAlignment="Center" FontFamily="D2Coding" FontSize="14" TextChanged="UserNameBox_TextChanged"/>
+            <Label Content="@" Canvas.Left="224" Canvas.Top="160" FontFamily="D2Coding" FontSize="16" Height="28"/>
+            <ComboBox x:Name="EmailCombobox"  Canvas.Left="372" Canvas.Top="158" Width="120" Height="30" DisplayMemberPath="name" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="EmailTextBox" Height="30" Canvas.Left="247" TextWrapping="Wrap" Canvas.Top="158" Width="120" VerticalContentAlignment="Center"/>
+            <Label x:Name="CanUseThisEmail" Content="" Canvas.Left="19" Canvas.Top="193" Width="305" FontFamily="D2Coding"/>
+            <Button x:Name="EmailButton" Content="이메일 인증" Canvas.Left="329" Canvas.Top="193" Width="163" Height="24" BorderBrush="#FFC5C5C5" Background="#FFF7F7F7" FontFamily="D2Coding" Click="EmailButton_Click"/>
+            <Canvas x:Name="EmailVerifyCanvas" Height="60" Canvas.Left="19" Canvas.Top="222" Width="473" Background="#FFEEEEEE">
+                <Label Content="코드:" Canvas.Left="218" Canvas.Top="9" FontFamily="D2Coding" Height="23"/>
+                <TextBox x:Name="VerifyBox" Height="23" MaxLength="12" Canvas.Left="263" TextWrapping="NoWrap"  Canvas.Top="10" Width="120" VerticalContentAlignment="Center"/>
+                <Label x:Name="TimeCount"  Content="시간이 만료되었습니다." Canvas.Left="331" Canvas.Top="33" FontFamily="D2Coding" Foreground="Green"/>
+                <Button x:Name="VerfiyButton" Content="인증" Canvas.Left="388" Canvas.Top="10" Width="75" BorderBrush="#FFC5C5C5" Background="#FFF7F7F7" Height="23" Click="VerfiyButton_Click"/>
+                <Label Content="다시한번 이메일 인증을 누를경우&#xD;&#xA;새로운 코드가 발급됩니다." Canvas.Left="10" Canvas.Top="10" FontFamily="D2Coding" Foreground="Gray"/>
+            </Canvas>
+
+            <Label Content="비밀번호" Canvas.Left="10" Canvas.Top="323" RenderTransformOrigin="0,0" FontFamily="D2Coding" FontSize="20"/>
+            <Label x:Name="PasswordWarring"  Content="비밀번호는 8자리 이상 35자리 미만, 특수문자와 영어, 숫자가 포함되어야합니다." Canvas.Left="100" Canvas.Top="330" FontFamily="D2Coding" Foreground="Gray" />
+            <PasswordBox x:Name="PasswordBox"  MaxLength="35" Canvas.Left="19" Canvas.Top="361" Width="523" Height="30" PasswordChar="*" VerticalContentAlignment="Center" FontFamily="D2Coding" FontSize="20"/>
+            <Label Content="비밀번호 확인" Canvas.Left="10" Canvas.Top="423" RenderTransformOrigin="0,0" FontFamily="D2Coding" FontSize="20"/>
+            <Label x:Name="PasswordRepeatWarring"  Content="" Canvas.Left="155" Canvas.Top="430" FontFamily="D2Coding" Foreground="Gray" />
+            <PasswordBox x:Name="PasswordRepeatBox"  MaxLength="35" Canvas.Left="19" Canvas.Top="461" Width="523" Height="30" PasswordChar="*" VerticalContentAlignment="Center" FontFamily="D2Coding" FontSize="20"/>
+
+        </Canvas>
+        <Canvas HorizontalAlignment="Left" Height="556" Margin="670,103,0,0" VerticalAlignment="Top" Width="579">
+            <Label Content="팀 코드" Canvas.Left="10" Canvas.Top="10" RenderTransformOrigin="0,0" FontFamily="D2Coding" FontSize="20"/>
+            <Label x:Name="TeamCodeWarring"  Content="팀코드는 아래 문서에서 설명을 확인하세요. (팀명은 20자를 초과할 수 없습니다.)" Canvas.Left="100" Canvas.Top="17" FontFamily="D2Coding" Foreground="Gray" />
+            <Canvas x:Name="DocumentsCanvas" Height="251" Canvas.Left="20" Canvas.Top="48" Width="539" Background="#FFF3F3F3">
+                <Label Content="Q. 팀 코드가 무엇인가요?" Canvas.Left="10" Canvas.Top="10" FontFamily="D2Coding" FontSize="16" Foreground="DarkGreen"/>
+                <Label Content="A. 이곳에서 사용되는 팀을 식별하기 위한 코드입니다." Canvas.Left="31" Canvas.Top="39" FontFamily="D2Coding" FontSize="14" Foreground="#FF535353"/>
+                <Label Content="Q. 팀 코드를 작성하면 어떻게 되나요?" Canvas.Left="10" Canvas.Top="67" FontFamily="D2Coding" FontSize="16" Foreground="DarkGreen"/>
+                <Label Content="A. 만약 팀코드가 정상일경우, 그 팀의 팀장에게 승인신청을 하게됩니다." Canvas.Left="31" Canvas.Top="96" FontFamily="D2Coding" FontSize="14" Foreground="#FF535353"/>
+                <Label Content="Q. 팀을 만들고 싶으면 어떻게 하나요?" Canvas.Left="10" Canvas.Top="124" FontFamily="D2Coding" FontSize="16" Foreground="DarkGreen"/>
+                <Label Content="A. 만들고 싶은 팀이름을 작성하시면 새로운 팀코드가 자동으로 발급됩니다." Canvas.Left="31" Canvas.Top="153" FontFamily="D2Coding" FontSize="14" Foreground="#FF535353"/>
+                <Label Content="Q. 중복 팀 참여가 가능한가요?" Canvas.Left="10" Canvas.Top="181" FontFamily="D2Coding" FontSize="16" Foreground="DarkGreen"/>
+                <Label Content="A. 추후 추가 예정입니다." Canvas.Left="31" Canvas.Top="210" FontFamily="D2Coding" FontSize="14" Foreground="#FF535353"/>
+            </Canvas>
+            <TextBox x:Name="TeamCodeBox" Width="539" Canvas.Left="20" Canvas.Top="305" Height="40" MaxLength="20" FontFamily="D2Coding" FontSize="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Foreground="#FF818181" >
+                <TextBox.Style>
+                    <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                        <Style.Resources>
+                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Canvas Width="539" Height="40" Background="White">
+                                        <Label Canvas.Left="10"  Canvas.Top="6" FontFamily="D2Coding" Content="이곳에 팀코드 혹은 만들고 싶은 팀명을 입력해주세요." Foreground="#FF818181" VerticalContentAlignment="Center"/>
+                                    </Canvas>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+
+                        </Style.Triggers>
+                    </Style>
+
+                </TextBox.Style>
+            </TextBox>
+            <Label x:Name="IsNewTeam" Content="새로운 팀을 생성하시는군요!    팀명은 입력하신 정보로 기록됩니다." FontFamily="D2Coding" Canvas.Left="20" Canvas.Top="350" Foreground="Gray"/>
+            <Button x:Name="RegisterButton" Content="가입하기" Canvas.Left="20" Canvas.Top="415" Width="539" Height="110" BorderBrush="#FFDEDEDE" Background="#FF8EB7FF" Foreground="WHITE" FontFamily="D2Coding" FontSize="40" Click="RegisterButton_Click"/>
+        </Canvas>
+    </Grid>
+</Window>

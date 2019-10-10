@@ -1,0 +1,70 @@
+﻿<Page x:Class="TeamProgramWithDatabase.zPageList.GeneralPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TeamProgramWithDatabase.zPageList"
+      mc:Ignorable="d" 
+      d:DesignHeight="718" d:DesignWidth="1094"
+      Title="GeneralPage" Background="Transparent">
+
+    <Grid>
+        <!--Top-->
+
+        <Canvas x:Name="NoticePanel" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" Width="1042" Height="62" Margin="26,646.002,0,0" RenderTransformOrigin="0.5,0.5">
+            <Canvas Background="#cbcbcb" Width="1040" Height="60">
+                <Canvas.Effect>
+                    <BlurEffect KernelType="Box"></BlurEffect>
+                </Canvas.Effect>
+            </Canvas>
+
+            <Canvas HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="1042" Background="White" Canvas.Top="0.5">
+                <Frame x:Name="GeneralNotice" Content="Frame" Height="40" Canvas.Left="10" Canvas.Top="10" Width="1022"/>
+            </Canvas>
+        </Canvas>
+
+
+        <Canvas x:Name="DDayPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" Width="330" Height="482" Margin="738,140,0,0">
+            <Canvas Background="#cbcbcb" Width="330.5" Height="482">
+                <Canvas.Effect>
+                    <BlurEffect KernelType="Box"/>
+                </Canvas.Effect>
+            </Canvas>
+
+            <Canvas HorizontalAlignment="Left" Height="481.5" VerticalAlignment="Top" Width="330" Background="White" Canvas.Left="0.5" Canvas.Top="0.5">
+                <Label Content="D-Day" Canvas.Left="10" Width="300" Height="42" VerticalContentAlignment="Center" FontFamily="/TeamProgramWithDatabase;component/Resources/#210 MGothicOTF 050" Foreground="#5d5d5d" Canvas.Top="10" FontSize="30"/>
+            </Canvas>
+        </Canvas>
+
+
+        <!--Bottom-->
+        <Canvas x:Name="ToDoListPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" Width="338" Height="482" Margin="26,140,0,0">
+            <Canvas Background="#cbcbcb" Width="330.5" Height="482">
+                <Canvas.Effect>
+                    <BlurEffect KernelType="Box"/>
+                </Canvas.Effect>
+            </Canvas>
+
+            <Canvas HorizontalAlignment="Left" Height="481.5" VerticalAlignment="Top" Width="330" Background="White" Canvas.Left="0.5" Canvas.Top="0.5">
+                <Label Content="나의 할일" Canvas.Left="10" Canvas.Top="10" Width="300" Height="42" VerticalContentAlignment="Center" Foreground="#5d5d5d" FontSize="30" FontFamily="/TeamProgramWithDatabase;component/Resources/#210 MGothicOTF 050"/>
+            </Canvas>
+        </Canvas>
+
+        <Canvas x:Name="MessagePanel" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" Width="338" Height="482" Margin="384,140,0,0">
+            <Canvas Background="#cbcbcb" Width="330.5" Height="482">
+                <Canvas.Effect>
+                    <BlurEffect KernelType="Box"/>
+                </Canvas.Effect>
+            </Canvas>
+
+            <Canvas HorizontalAlignment="Left" Height="481.5" VerticalAlignment="Top" Width="330" Background="White" Canvas.Left="0.5" Canvas.Top="0.5">
+                <Label Content="최근 메시지"  Canvas.Left="10" Canvas.Top="10" Width="300" Height="42" VerticalContentAlignment="Center" Foreground="#5d5d5d" FontSize="30" FontFamily="/TeamProgramWithDatabase;component/Resources/#210 MGothicOTF 050"/>
+            </Canvas>
+
+        </Canvas>
+        <Label x:Name="Teamname" Content="Team Danny" HorizontalAlignment="Left" Height="60" Margin="26,27,0,0" VerticalAlignment="Top" Width="1058" FontSize="45" FontFamily="/TeamProgramWithDatabase;component/Resources/#210 MGothicOTF 050" Foreground="#5d5d5d" VerticalContentAlignment="Center">
+        </Label>
+        <Label Content="우리 팀의 프로젝트 진행 상황을 확인해 보세요."  HorizontalAlignment="Left" Height="35" Margin="26,87,0,0" VerticalAlignment="Top" Width="1058" FontSize="25" FontFamily="/TeamProgramWithDatabase;component/Resources/#210 MGothicOTF 030" Foreground="#5d5d5d" VerticalContentAlignment="Center">
+        </Label>
+    </Grid>
+</Page>

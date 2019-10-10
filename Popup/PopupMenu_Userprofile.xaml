@@ -1,0 +1,32 @@
+﻿<Page x:Class="TeamProgramWithDatabase.Popup.PopupMenu_Userprofile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TeamProgramWithDatabase.Popup"
+      mc:Ignorable="d" 
+      d:DesignHeight="100" d:DesignWidth="181"
+      Title="PopupMenu_Userprofile">
+
+    <Grid>
+        <Canvas x:Name="GeneralSettings"  HorizontalAlignment="Left" Height="50" Margin="0, 0" VerticalAlignment="Top" Width="181" Background="White" ForceCursor="True" Cursor="Hand">
+            <Canvas HorizontalAlignment="Left" Width="1" Height="50" Background="#FFD4D4D4">
+                <Canvas.Effect>
+                    <BlurEffect KernelType="Box" Radius="2"></BlurEffect>
+                </Canvas.Effect>
+            </Canvas>
+            <Label Content="Settings" Height="30" Canvas.Left="48" Canvas.Top="10" Width="128" VerticalContentAlignment="Center" FontFamily="/TeamProgramWithDatabase;component/Resources/#210 GureumGothicOTF 030" Foreground="#FF808080" FontSize="16"/>
+            <Image Height="28" Canvas.Left="15" Canvas.Top="10" Width="28" Source="/TeamProgramWithDatabase;component/Resources/Sidebar_img/settings.png" RenderTransformOrigin="0.644,0.467"/>
+        </Canvas>
+        
+        <Canvas x:Name="Logout"  HorizontalAlignment="Left" Height="50" Margin="0, 50" VerticalAlignment="Top" Width="181" Background="White" ForceCursor="True" Cursor="Hand">
+            <Canvas HorizontalAlignment="Left" Width="1" Height="50" Background="#FFD4D4D4">
+                <Canvas.Effect>
+                    <BlurEffect KernelType="Box" Radius="2"></BlurEffect>
+                </Canvas.Effect>
+            </Canvas>
+            <Label Content="Logout" Height="30" Canvas.Left="48" Canvas.Top="10" Width="128" VerticalContentAlignment="Center" FontFamily="/TeamProgramWithDatabase;component/Resources/#210 GureumGothicOTF 030" Foreground="#FF808080" FontSize="16"/>
+            <Image Height="28" Canvas.Left="15" Canvas.Top="10" Width="28" Source="/TeamProgramWithDatabase;component/Resources/Sidebar_img/logout.png" RenderTransformOrigin="0.644,0.467"/>
+        </Canvas>
+    </Grid>
+</Page>
